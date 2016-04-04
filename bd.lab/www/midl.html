@@ -1,0 +1,39 @@
+<article class="midl">
+	<h2><a href="#"><?=$name;?></a></h3>
+	<?
+	if ($alias_1 != "")
+		echo "<p>
+		Псевдоним №1: $alias_1
+		</p>";
+	if ($alias_2 != "")
+		echo "<p>
+		Псевдоним №2: $alias_2
+		</p>";
+	if ($alias_3 != "")
+		echo "<p>
+		Псевдоним №3: $alias_3
+		</p>";
+	?>
+	<p>
+		Срок годности: <?=$shelf_life;?> суток/сутки
+	</p>
+	<p>
+		Состав: <?=$composition;?>
+	</p>
+
+	<form name="upd" action="upd.php" method="post">
+		<input type="hidden" name="id" value="<?=$id?>">
+		<input type="hidden" name="name" value="<?=$name?>">
+		<input type="hidden" name="alias_1" value="<?=$alias_1?>">
+		<input type="hidden" name="alias_2" value="<?=$alias_2?>">
+		<input type="hidden" name="alias_3" value="<?=$alias_3?>">
+		<input type="hidden" name="shelf_life" value="<?=$shelf_life?>">
+		<input type="hidden" name="composition" value="<?=$composition?>">
+		<input class="galaxybutton" name="upd" type="submit" value="Изменить">
+	</form>
+	
+	<form name="del" action="del.php" method="post">
+		<input type="hidden" name="id" value="<?=$id?>">
+		<input class="galaxybutton" name="del" type="submit" value="Удалить">
+	</form>
+</article>		
