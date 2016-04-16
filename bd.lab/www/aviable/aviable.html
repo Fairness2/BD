@@ -1,0 +1,46 @@
+<article class="midl">
+	<h2><a href="#"><?=$name;?></a></h2>
+	<?
+	if ($alias_1 != "")
+		echo "<p>
+		Псевдоним №1: $alias_1
+		</p>";
+	if ($alias_2 != "")
+		echo "<p>
+		Псевдоним №2: $alias_2
+		</p>";
+	if ($alias_3 != "")
+		echo "<p>
+		Псевдоним №3: $alias_3
+		</p>";
+	?>
+	<p>
+		Срок годности: <?=$shelf_life;?> суток/сутки
+	</p>
+	<p>
+		Состав: <?=$composition;?>
+	</p>
+
+	<?
+		while ($row = $STHA->fetch()) 
+		{
+			$date = htmlspecialchars ($row["date_of_manufacture"]);
+			$price = htmlspecialchars ($row["price"]);
+			$did = htmlspecialchars ($row["did"]);
+			$dname = htmlspecialchars ($row["dname"]);
+			$er = 1;
+			require "aviableility.html";
+		} 
+		if ($er != 1) 
+		{
+			echo "<p>Сори бро, этого лекарства нет в наличии<p>";
+		}
+	?>
+
+	<form name="insert" action="insert.php" method="post">
+		<input type="hidden" name="key" value="<?=$key?>">
+		<input type="hidden" name="id" value="<?=$id?>">
+		<input type="hidden" name="name" value="<?=$name?>">
+		<input class="galaxybutton" name="upd" type="submit" value="Добавить товар в аптеке">
+	</form>
+</article>	

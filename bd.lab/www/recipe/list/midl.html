@@ -1,0 +1,36 @@
+<article class="midl">
+	<h2><?=$date;?></h2>
+
+	<?
+		$array = array();
+		while($rows = $STHlist->fetch())
+		{
+			$drug = $rows["drug"];
+			$lid = $rows["id"];
+			$array[$drug] = $drug;
+			require "drug.html";
+			$er = 1;
+		}
+		if ($er != 1) {
+			echo "<p>В этом рецепте нет лекарств. Странно, не правда ли<p>";
+		}
+	?>
+	<br />
+
+	
+	<form name="insert" action="inserted.php" method="post">
+		<select name="drug">
+			<?
+				while ($rowd = $STHdrug->fetch()) {
+					$named = $rowd["name"];
+					if (!isset($array[$named])) {
+						echo "<option value='$named''>$named</option>";
+					}
+				}
+			?>
+		</select>
+		<input type="hidden" name="id" value="<?=$id?>">
+		<input type="hidden" name="key" value="<?=$key?>">
+		<input class="galaxybutton" name="upd" type="submit" value="Добавить лекарство">
+	</form>
+</article>

@@ -1,0 +1,11 @@
+<article class="midl">
+	<form name="fupd" action="upded.php" method="post">	
+		<input type="hidden" name="id" value="<?=$id?>">
+		<input type="hidden" name="key" value="<?=$key?>">			
+		<label>Дата выписки</label><br />				
+		<input class="galaxyin" type="date" name="date" value="<?=$date?>" required>
+		<label><?=$erorn?></label>		
+		<br />
+		<input class="galaxybutton" name="done" type="submit" value="Изменить">
+	</form>
+</article>

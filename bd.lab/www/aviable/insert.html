@@ -1,0 +1,32 @@
+		<article class="midl">
+			<form name="fupd" action="inserted.php" method="post">
+				<input type="hidden" name="id" value="<?=$id?>">	
+				<input type="hidden" name="key" value="<?=$key?>">
+				<label><?=$erorn?></label><br />		
+				<label>Выберите аптеку</label><br />
+				<select name="drugstore" class="galaxyin">
+					<option disabled="disabled">Выберете аптеку</option>
+					<?
+						while ($grow = $STHD->fetch())
+						{
+							$dname = $grow["name"];
+							$address = $grow["address"];
+							$nadress = '"'.$dname.'"'.' Адрес: '.$address;
+							$nadress = clean($nadress);
+							if ($nadress == $snadress) 
+								require "inselected.html";
+							else
+								require "inselect.html";
+						}
+					?>
+				</select>
+				<br />
+				<label>Дата изготовления</label><br />
+				<input class="galaxyin" type="date" name="data" value="<?=$data?>" required>	
+				<br />
+				<label>Цена</label><br />
+				<input class="galaxyin" type="num" value="<?=$prise?>" placeholder="Цена" name="prise" title="Сюда введите цену" pattern="[0-9]{1,6}" required>
+				<br />
+				<input class="galaxybutton" name="done" type="submit" value="Добавить">
+			</form>
+		</article>

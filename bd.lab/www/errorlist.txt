@@ -11,4 +11,84 @@ Stack trace:
 Stack trace:
 #0 Z:\home\bd.lab\www\navigation_and_head\conect.php(7): PDO->__construct('pgsql:host=loca...', 'postgres', 'postgres')
 #1 Z:\home\bd.lab\www\index.php(5): require('Z:\home\bd.lab\...')
+#2 {main}exception 'PDOException' with message 'SQLSTATE[08006] [7] FATAL:  the database system is shutting down' in Z:\home\bd.lab\www\navigation_and_head\conect.php:7
+Stack trace:
+#0 Z:\home\bd.lab\www\navigation_and_head\conect.php(7): PDO->__construct('pgsql:host=loca...', 'postgres', 'postgres')
+#1 Z:\home\bd.lab\www\navigation_and_head\navigation.php(2): require('Z:\home\bd.lab\...')
+#2 Z:\home\bd.lab\www\index.php(4): require_once('Z:\home\bd.lab\...')
+#3 {main}exception 'PDOException' with message 'SQLSTATE[08006] [7] FATAL:  the database system is shutting down' in Z:\home\bd.lab\www\navigation_and_head\conect.php:7
+Stack trace:
+#0 Z:\home\bd.lab\www\navigation_and_head\conect.php(7): PDO->__construct('pgsql:host=loca...', 'postgres', 'postgres')
+#1 Z:\home\bd.lab\www\index.php(6): require('Z:\home\bd.lab\...')
+#2 {main}exception 'PDOException' with message 'SQLSTATE[08006] [7] FATAL:  the database system is shutting down' in Z:\home\bd.lab\www\navigation_and_head\conect.php:7
+Stack trace:
+#0 Z:\home\bd.lab\www\navigation_and_head\conect.php(7): PDO->__construct('pgsql:host=loca...', 'postgres', 'postgres')
+#1 Z:\home\bd.lab\www\navigation_and_head\navigation.php(2): require('Z:\home\bd.lab\...')
+#2 Z:\home\bd.lab\www\index.php(4): require_once('Z:\home\bd.lab\...')
+#3 {main}exception 'PDOException' with message 'SQLSTATE[08006] [7] FATAL:  the database system is shutting down' in Z:\home\bd.lab\www\navigation_and_head\conect.php:7
+Stack trace:
+#0 Z:\home\bd.lab\www\navigation_and_head\conect.php(7): PDO->__construct('pgsql:host=loca...', 'postgres', 'postgres')
+#1 Z:\home\bd.lab\www\index.php(6): require('Z:\home\bd.lab\...')
+#2 {main}exception 'PDOException' with message 'SQLSTATE[08006] [7] FATAL:  the database system is shutting down' in Z:\home\bd.lab\www\navigation_and_head\conect.php:7
+Stack trace:
+#0 Z:\home\bd.lab\www\navigation_and_head\conect.php(7): PDO->__construct('pgsql:host=loca...', 'postgres', 'postgres')
+#1 Z:\home\bd.lab\www\navigation_and_head\navigation.php(2): require('Z:\home\bd.lab\...')
+#2 Z:\home\bd.lab\www\index.php(4): require_once('Z:\home\bd.lab\...')
+#3 {main}exception 'PDOException' with message 'SQLSTATE[08006] [7] FATAL:  the database system is shutting down' in Z:\home\bd.lab\www\navigation_and_head\conect.php:7
+Stack trace:
+#0 Z:\home\bd.lab\www\navigation_and_head\conect.php(7): PDO->__construct('pgsql:host=loca...', 'postgres', 'postgres')
+#1 Z:\home\bd.lab\www\index.php(6): require('Z:\home\bd.lab\...')
+#2 {main}exception 'PDOException' with message 'SQLSTATE[08006] [7] FATAL:  the database system is shutting down' in Z:\home\bd.lab\www\navigation_and_head\conect.php:7
+Stack trace:
+#0 Z:\home\bd.lab\www\navigation_and_head\conect.php(7): PDO->__construct('pgsql:host=loca...', 'postgres', 'postgres')
+#1 Z:\home\bd.lab\www\navigation_and_head\navigation.php(2): require('Z:\home\bd.lab\...')
+#2 Z:\home\bd.lab\www\index.php(4): require_once('Z:\home\bd.lab\...')
+#3 {main}exception 'PDOException' with message 'SQLSTATE[08006] [7] FATAL:  the database system is shutting down' in Z:\home\bd.lab\www\navigation_and_head\conect.php:7
+Stack trace:
+#0 Z:\home\bd.lab\www\navigation_and_head\conect.php(7): PDO->__construct('pgsql:host=loca...', 'postgres', 'postgres')
+#1 Z:\home\bd.lab\www\index.php(6): require('Z:\home\bd.lab\...')
+#2 {main}exception 'PDOException' with message 'SQLSTATE[08006] [7] FATAL:  the database system is shutting down' in Z:\home\bd.lab\www\navigation_and_head\conect.php:7
+Stack trace:
+#0 Z:\home\bd.lab\www\navigation_and_head\conect.php(7): PDO->__construct('pgsql:host=loca...', 'postgres', 'postgres')
+#1 Z:\home\bd.lab\www\navigation_and_head\navigation.php(2): require('Z:\home\bd.lab\...')
+#2 Z:\home\bd.lab\www\index.php(4): require_once('Z:\home\bd.lab\...')
+#3 {main}exception 'PDOException' with message 'SQLSTATE[08006] [7] FATAL:  the database system is shutting down' in Z:\home\bd.lab\www\navigation_and_head\conect.php:7
+Stack trace:
+#0 Z:\home\bd.lab\www\navigation_and_head\conect.php(7): PDO->__construct('pgsql:host=loca...', 'postgres', 'postgres')
+#1 Z:\home\bd.lab\www\index.php(6): require('Z:\home\bd.lab\...')
+#2 {main}exception 'PDOException' with message 'SQLSTATE[08006] [7] FATAL:  the database system is shutting down' in Z:\home\bd.lab\www\navigation_and_head\conect.php:7
+Stack trace:
+#0 Z:\home\bd.lab\www\navigation_and_head\conect.php(7): PDO->__construct('pgsql:host=loca...', 'postgres', 'postgres')
+#1 Z:\home\bd.lab\www\navigation_and_head\navigation.php(2): require('Z:\home\bd.lab\...')
+#2 Z:\home\bd.lab\www\index.php(4): require_once('Z:\home\bd.lab\...')
+#3 {main}exception 'PDOException' with message 'SQLSTATE[08006] [7] FATAL:  the database system is shutting down' in Z:\home\bd.lab\www\navigation_and_head\conect.php:7
+Stack trace:
+#0 Z:\home\bd.lab\www\navigation_and_head\conect.php(7): PDO->__construct('pgsql:host=loca...', 'postgres', 'postgres')
+#1 Z:\home\bd.lab\www\index.php(6): require('Z:\home\bd.lab\...')
+#2 {main}exception 'PDOException' with message 'SQLSTATE[08006] [7] could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" and accepting
+	TCP/IP connections on port 5432?' in Z:\home\bd.lab\www\navigation_and_head\conect.php:7
+Stack trace:
+#0 Z:\home\bd.lab\www\navigation_and_head\conect.php(7): PDO->__construct('pgsql:host=loca...', 'postgres', 'postgres')
+#1 Z:\home\bd.lab\www\navigation_and_head\navigation.php(2): require('Z:\home\bd.lab\...')
+#2 Z:\home\bd.lab\www\index.php(4): require_once('Z:\home\bd.lab\...')
+#3 {main}exception 'PDOException' with message 'SQLSTATE[08006] [7] could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" and accepting
+	TCP/IP connections on port 5432?' in Z:\home\bd.lab\www\navigation_and_head\conect.php:7
+Stack trace:
+#0 Z:\home\bd.lab\www\navigation_and_head\conect.php(7): PDO->__construct('pgsql:host=loca...', 'postgres', 'postgres')
+#1 Z:\home\bd.lab\www\index.php(6): require('Z:\home\bd.lab\...')
+#2 {main}exception 'PDOException' with message 'SQLSTATE[08006] [7] could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" and accepting
+	TCP/IP connections on port 5432?' in Z:\home\bd.lab\www\navigation_and_head\conect.php:7
+Stack trace:
+#0 Z:\home\bd.lab\www\navigation_and_head\conect.php(7): PDO->__construct('pgsql:host=loca...', 'postgres', 'postgres')
+#1 Z:\home\bd.lab\www\navigation_and_head\navigation.php(2): require('Z:\home\bd.lab\...')
+#2 Z:\home\bd.lab\www\index.php(4): require_once('Z:\home\bd.lab\...')
+#3 {main}exception 'PDOException' with message 'SQLSTATE[08006] [7] could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" and accepting
+	TCP/IP connections on port 5432?' in Z:\home\bd.lab\www\navigation_and_head\conect.php:7
+Stack trace:
+#0 Z:\home\bd.lab\www\navigation_and_head\conect.php(7): PDO->__construct('pgsql:host=loca...', 'postgres', 'postgres')
+#1 Z:\home\bd.lab\www\index.php(6): require('Z:\home\bd.lab\...')
 #2 {main}

@@ -1,0 +1,16 @@
+<article class="midl">
+	<h2><a href="http://bd.lab/recipe/list?id=<?=$id?>"><?=$date;?></a></h2>
+
+	<form name="upd" action="upd.php" method="post">
+		<input type="hidden" name="id" value="<?=$id?>">
+		<input type="hidden" name="key" value="<?=$key?>">
+		<input type="hidden" name="date" value="<?=$date?>">
+		<input class="galaxybutton" name="upd" type="submit" value="Изменить дату">
+	</form>
+	
+	<form name="del" action="del.php" method="post">
+		<input type="hidden" name="key" value="<?=$key?>">
+		<input type="hidden" name="id" value="<?=$id?>">
+		<input class="galaxybutton" name="del" type="submit" value="Удалить рецепт">
+	</form>
+</article>		

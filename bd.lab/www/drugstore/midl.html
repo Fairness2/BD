@@ -1,0 +1,33 @@
+<article class="midl">
+	<h2><a href=""><?=$name;?></a></h2>
+
+	<?
+	if ($number != "")
+		echo "<p>
+		Номер телефона: $number
+		</p>";
+	?>
+	<p>
+		Тип: <?=$type;?>
+	</p>
+	<p>
+		Адрес: <?=$address;?>
+	</p>
+	
+
+	<form name="upd" action="upd.php" method="post">
+		<input type="hidden" name="id" value="<?=$id?>">
+		<input type="hidden" name="key" value="<?=$key?>">
+		<input type="hidden" name="name" value="<?=$name?>">
+		<input type="hidden" name="number" value="<?=$number?>">
+		<input type="hidden" name="type" value="<?=$type?>">
+		<input type="hidden" name="address" value="<?=$address?>">
+		<input class="galaxybutton" name="upd" type="submit" value="Изменить">
+	</form>
+	
+	<form name="del" action="del.php" method="post">
+		<input type="hidden" name="key" value="<?=$key?>">
+		<input type="hidden" name="id" value="<?=$id?>">
+		<input class="galaxybutton" name="del" type="submit" value="Удалить">
+	</form>
+</article>		

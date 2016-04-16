@@ -1,5 +1,5 @@
 <article class="midl">
-	<h2><a href="#"><?=$name;?></a></h3>
+	<h2><a href="http://bd.lab/aviable?id=<?=$id?>&name=<?=$name?>"><?=$name;?></a></h2>
 	<?
 	if ($alias_1 != "")
 		echo "<p>
@@ -33,6 +33,7 @@
 	</form>
 	
 	<form name="del" action="del.php" method="post">
+		<input type="hidden" name="key" value="<?=$key?>">
 		<input type="hidden" name="id" value="<?=$id?>">
 		<input class="galaxybutton" name="del" type="submit" value="Удалить">
 	</form>

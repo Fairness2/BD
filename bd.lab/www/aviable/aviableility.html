@@ -1,0 +1,6 @@
+	<p>Аптека: <a href="#"><?=$dname;?></a>; Цена: <?=$price;?> рублей; Дата изготовления: <?=$date;?>	<p>
+	<?
+		if (isset($_SESSION["id"])) {
+			require $_SERVER['DOCUMENT_ROOT']."/forms_and_control/buy.html";
+		}
+	?>

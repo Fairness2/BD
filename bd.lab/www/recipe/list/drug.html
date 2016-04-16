@@ -1,0 +1,12 @@
+<p class="list">
+	Выписанное лекарство: <?=$drug?> <br />
+</p>
+
+
+<form name="del" action="del.php" method="post">
+	<input type="hidden" name="key" value="<?=$key?>">
+	<input type="hidden" name="lid" value="<?=$lid?>">
+	<input type="hidden" name="id" value="<?=$id?>">
+	<input class="galaxybutton" name="del" type="submit" value="Удалить">
+</form>
+<br />

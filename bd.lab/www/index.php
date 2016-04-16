@@ -1,7 +1,8 @@
-﻿<?	
+<?	
 	session_start();
 	require_once "/navigation_and_head/head.html";
 	require_once "/navigation_and_head/navigation.php";
+	require_once "/forms_and_control/control_form.php";
 	require "/navigation_and_head/conect.php";
 	if ($errorconect != 2) 
 	{			
@@ -16,7 +17,10 @@
 			//array_push($arr, "galaxy");
 			//$STHSel->bindParam(1, $name);
 			if (isset($_GET["page"]))
-				$moment = ($_GET["page"] - 1) * 5;
+			{	
+				$page1 = clean ($_GET["page"]);
+				$moment = ($page1 - 1) * 5;
+			}
 			else
 				$moment = 0;
 			$STHSel->bindParam(1, $moment);  
@@ -48,6 +52,7 @@
 				$alias_3 = htmlspecialchars ($row["alias_3"]);
 				$shelf_life = htmlspecialchars ($row["shelf_life"]);
 				$composition = htmlspecialchars ($row["composition"]);
+				$key = $_SESSION["key"];
 				require "midl.html";
 				$error = 2;
 			}
@@ -55,12 +60,13 @@
 			if ($error == 1)
 				require "error.html";
 			require_once "footer.html";
-			require_once "/navigation_and_head/foot.html";
+			
 		}
 		else
 			require "/navigation_and_head/errprconect.html";
 	}
 	else
 		require "/navigation_and_head/errorconect.html";
-	$DBH = null;	
+	$DBH = null;
+	require_once "/navigation_and_head/foot.html";	
 ?>

@@ -2,7 +2,7 @@
 	session_start();
 	require_once "/navigation_and_head/head.html";
 	require_once "/navigation_and_head/navigation.php";
-	require_once "/navigation_and_head/foot.html";
+	
 	if (isset($_POST["id"]))
 	{
 		$id = htmlspecialchars ($_POST["id"]);
@@ -13,7 +13,7 @@
 		$shelf_life = htmlspecialchars ($_POST["shelf_life"]);
 		$composition = htmlspecialchars ($_POST["composition"]);
 	}
-	else
+	elseif (isset($_SESSION["did"]) && $_SESSION["did"] != "")
 	{		
 		$id = $_SESSION["did"];
 		$name = $_SESSION["dname"];
@@ -34,4 +34,5 @@
 	}
 	$key = $_SESSION["key"];
 	require_once "upd.html";
+	require_once "/navigation_and_head/foot.html";
 ?>
