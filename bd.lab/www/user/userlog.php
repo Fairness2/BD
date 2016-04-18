@@ -18,10 +18,19 @@
 						$STHUs->execute();
 						$STHUs->setFetchMode(PDO::FETCH_ASSOC);
 						$row = $STHUs->fetch();
+						
 						if ($row["count"] == 1)
 						{
-							$_SESSION["surname"] = $_GET["surname"];
-							$_SESSION["id"] = $_GET["id"];
+							$STHp = $DBH->prepare("SELECT privileges FROM patient WHERE id = ?");
+							$STHp->bindParam(1, $id);
+							$STHp->execute();
+							$STHp->setFetchMode(PDO::FETCH_ASSOC);
+							$rowp = $STHp->fetch();
+							$privileges = $rowp["privileges"];
+
+							$_SESSION["surname"] = $surname;
+							$_SESSION["id"] = $id;
+							$_SESSION["privileges"] = $privileges;
 							$_SESSION["key"] = md5($_GET["surname"].$_GET["id"].$_SERVER["REMOTE_ADDR"]);
 							$DBH = null;
 							header("Location: http://bd.lab");							

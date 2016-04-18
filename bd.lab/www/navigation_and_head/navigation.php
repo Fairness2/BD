@@ -7,7 +7,7 @@
       $STHuser = $DBH->prepare("SELECT id, surname FROM patient WHERE delete = false ORDER BY surname");
       $STHuser->execute();
       $STHuser->setFetchMode(PDO::FETCH_ASSOC); 
-      }
+    }
     catch (PDOException $e) {
       $errorconect = 1;
       file_put_contents ("errorlist.txt", $e, FILE_APPEND);

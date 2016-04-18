@@ -1,0 +1,46 @@
+<article class="midl">
+	<h2>Выберите период и пользователя</h2>
+
+	<form name="select" action="select.php" method="post">
+		<input type="hidden" name="key" value="<?=$key?>">
+        <label>Пользователь*</label><br />
+        <select name="patient" class="galaxyin" oninput="search()">
+         <option disabled="disabled">Выберете пользователя</option>
+        <?           
+            $eruser = 1;
+            while($rowus = $STHuser->fetch())
+            {
+                $surname = $rowus["surname"];  
+                include "section.html";           
+            }
+        ?>
+        </select>
+        <br />
+        <label>Дата с*</label><br />
+		<input type="date" oninput="search()" name="st_date" class="galaxyin">
+        <br />
+        <label>Дата по*</label><br />
+        <input type="date" oninput="search()" name="fn_date" class="galaxyin">
+	</form>
+	<br />
+    <br />
+    <br />
+    <p class="results">Сдесь пока ничего нет</p>
+</article>	
+
+<script>
+function search() {
+	 			var key = document.getElementsByTagName('input')[0].value;
+                var patient = document.getElementsByTagName('select')[0].value;
+                var st_date = document.getElementsByTagName('input')[1].value;
+                var fn_date = document.getElementsByTagName('input')[2].value;
+                $.ajax({
+                    type: 'POST',
+                    url: 'select.php',
+                    data: 'key=' + key + '&patient=' + patient + '&st_date=' + st_date + '&fn_date=' + fn_date,
+                    success: function(data) {
+                        $('.results').html(data);
+                    }
+                });
+            }
+</script>

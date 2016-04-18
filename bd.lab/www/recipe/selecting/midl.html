@@ -1,0 +1,25 @@
+<article class="midl">
+	<h2>Выберите месяц</h2>
+
+	<form name="select" action="select.php" method="post">
+		<input type="hidden" name="key" value="<?=$key?>">
+		<input type="month" oninput="search()" name="month" class="galaxyin">
+	</form>
+	 
+</article>
+<article class="midl results"><p>Сдесь пока ничего нет</p></article>		
+
+<script>
+function search() {
+	 			var key = document.getElementsByTagName('input')[0].value;
+                var month = document.getElementsByTagName('input')[1].value;
+                $.ajax({
+                    type: 'POST',
+                    url: 'select.php',
+                    data: 'key=' + key + '&month=' + month,
+                    success: function(data) {
+                        $('.results').html(data);
+                    }
+                });
+            }
+</script>

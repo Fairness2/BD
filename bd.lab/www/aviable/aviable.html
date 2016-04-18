@@ -1,5 +1,5 @@
 <article class="midl">
-	<h2><a href="#"><?=$name;?></a></h2>
+	<h2><?=$name;?></h2>
 	<?
 	if ($alias_1 != "")
 		echo "<p>
@@ -26,6 +26,14 @@
 		{
 			$date = htmlspecialchars ($row["date_of_manufacture"]);
 			$price = htmlspecialchars ($row["price"]);
+			$bdprice = $price;
+			if (isset($_SESSION["id"])) 
+			{
+				if ($_SESSION["id"] == 1) {
+					$discount = htmlspecialchars ($row["discount"]);
+					$price = round(($price * ((100 - $discount) / 100)), 2);
+				}
+			}			
 			$did = htmlspecialchars ($row["did"]);
 			$dname = htmlspecialchars ($row["dname"]);
 			$er = 1;

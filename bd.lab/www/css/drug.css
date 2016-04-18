@@ -192,6 +192,7 @@ article img {
 }
 
 .galaxybutton {
+	padding: 0.5em;
 	text-align: center;
 	min-width: 6em;
 	min-height: 2em;
