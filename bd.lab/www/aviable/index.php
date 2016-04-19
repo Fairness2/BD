@@ -35,7 +35,10 @@
 								$alias_3 = htmlspecialchars ($row["alias_3"]);
 								$shelf_life = htmlspecialchars ($row["shelf_life"]);
 								$composition = htmlspecialchars ($row["composition"]);
-								$STHA = $DBH->prepare("SELECT DISTINCT date_of_manufacture, price, drugstore.id AS did, drugstore.name AS dname, discount FROM availability_of_drugs, drugstore, type_dragstore  WHERE id_drug = ? AND id_drugstore = drugstore.id AND status = false AND drugstore.delete = false AND availability_of_drugs.delete = false AND type = type_dragstore.id ORDER BY price");
+								$STHA = $DBH->prepare("SELECT DISTINCT date_of_manufacture, price, drugstore.id AS did, drugstore.name AS dname, drugstore.address AS address, discount 
+									FROM availability_of_drugs, drugstore, type_dragstore  
+									WHERE id_drug = ? AND id_drugstore = drugstore.id AND status = false AND drugstore.delete = false 
+									AND availability_of_drugs.delete = false AND type = type_dragstore.id ORDER BY price");
 								$STHA->bindParam(1, $id);
 								$STHA->execute();
 								$STHA->setFetchMode(PDO::FETCH_ASSOC);

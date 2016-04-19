@@ -1,0 +1,18 @@
+<article class="midl">
+	<h2><?=$name;?></h2>
+
+	
+	<p>
+		Адрес: <?=$address;?>
+	</p>
+	
+	<?
+		while($row = $STHSel->fetch())
+		{
+			$dname = $row["name"];
+			$count = $row["count"];
+			echo "<p>Препарат: $dname. Кол-во в аптеке: $count.</p>";
+			$error = 2;
+		}
+	?>
+</article>		
