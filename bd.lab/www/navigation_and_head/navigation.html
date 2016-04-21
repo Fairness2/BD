@@ -2,21 +2,14 @@
   <ul>
     <li><p class="navig">Вход</p>
     	<ul>
-	    	<?
-	    		$eruser = 1;
-		    	while($rowus = $STHuser->fetch())
-				{
-					$surname = htmlspecialchars ($rowus["surname"]);
-					$id = htmlspecialchars ($rowus["id"]);
-					require "navigation_li.html";
-				}
-			?>
       <?
         if (isset($_SESSION["id"]))
+        {
            require_once "nav_rec_yes_upd.html";
-      ?>
-      <li><a href="http://bd.lab/user/insert.php" class="navig">Добавить пользователя</a></li>
-			<li><a href="http://bd.lab/user/userunlog.php" class="navig">Выйти</a></li>
+        }
+        else
+          require_once "user_auto.html";
+      ?>			
 		</ul>
     </li>
     <li><p class="navig">Мои рецепты</p>
@@ -42,13 +35,21 @@
     <li><p class="navig">Аптеки</p>
     	<ul>
         	<li><a href="http://bd.lab/drugstore" class="navig">Посмотреть</a></li>
-        	<li><a href="http://bd.lab/drugstore/insert.php" class="navig">Добавить новую</a></li>
+          <?
+            if (isset($_SESSION["role"]) && $_SESSION["role"] !=0) 
+              echo '<li><a href="http://bd.lab/drugstore/insert.php" class="navig">Добавить новую</a></li>';
+          ?>
+        	
       	</ul>
     </li>
     <li><p class="navig">Препараты</p>
     	<ul>
         	<li><a href="http://bd.lab" class="navig">Посмотреть</a></li>
-        	<li><a href="http://bd.lab/insert.php" class="navig">Добавить новый</a></li>
+          <?
+            if (isset($_SESSION["role"]) && $_SESSION["role"] !=0) 
+              echo '<li><a href="http://bd.lab/insert.php" class="navig">Добавить новый</a></li>';
+          ?>
+        	
       	</ul>
     </li>
   </ul>

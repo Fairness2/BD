@@ -1,10 +1,16 @@
 		<aside>
-			<p class="asidep">Запросы</p>
-			<ul>
-				<li><a href="http://bd.lab/recipe/selecting" class="asidea">Данные по выписаным лекарствам за выбраный месяц</a></li>
-				<li><a href="http://bd.lab/user/major.php" class="asidea">Пациенты купившие самый дорогой препарат</a></li>
-				<li><a href="http://bd.lab/user/period" class="asidea">Кол-во купленого пациентом за выбраный период</a></li>
-			</ul>
+			<?
+				if (isset($_SESSION["role"]) && $_SESSION["role"] != 0) 
+					echo '<p class="asidep">Запросы</p>
+							<ul>
+								<li><a href="http://bd.lab/recipe/selecting" class="asidea">Данные по выписаным лекарствам за выбраный месяц</a></li>
+								<li><a href="http://bd.lab/user/major.php" class="asidea">Пациенты купившие самый дорогой препарат</a></li>
+								<li><a href="http://bd.lab/user/period" class="asidea">Кол-во купленого пациентом за выбраный период</a></li>
+							</ul>';
+				else
+					echo "Эти данные для вас недоступны";
+			?>
+			
 		</aside>
 	</body>
 </html>

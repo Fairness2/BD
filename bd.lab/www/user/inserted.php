@@ -10,27 +10,29 @@
 		$basic_diagnosis = clean ($_POST["newasic_diagnosis"]);
 		$concomitant_diagnosis = clean ($_POST["newconcomitant_diagnosis"]);
 		$privileges = clean ($_POST["newprivileges"]);
-		if(!empty($surname))
+		$passwd = clean ($_POST["passwd"]);
+		if(!empty($surname) && !empty($passwd))
 		{
-			if (check_length($surname, 1, 20) && check_length($years, 0, 3) && check_length($basic_diagnosis, 0, 50) && check_length($concomitant_diagnosis, 0, 50)) 
+			if (check_length($surname, 1, 20) && check_length($years, 0, 3) && check_length($basic_diagnosis, 0, 50) && check_length($concomitant_diagnosis, 0, 50) && check_length($passwd, 6, 100)) 
 			{				
 				require_once $_SERVER['DOCUMENT_ROOT']."/navigation_and_head/conect.php";
 				if ($errorconect != 2) 
 				{
 					try{
-						$STHI = $DBH->prepare("SELECT COUNT(id) FROM patient WHERE surname = ?");
+						$STHI = $DBH->prepare("SELECT COUNT(id) FROM patient WHERE surname = ? AND delete = false");
 						$STHI->bindParam(1, $surname);
 						$STHI->execute();
 						$STHI->setFetchMode(PDO::FETCH_ASSOC);
 						$row = $STHI->fetch();
 						if ($row["count"] == 0)
 						{
-							$STHIN = $DBH->prepare("INSERT INTO patient (surname, years, basic_diagnosis, concomitant_diagnosis, privileges) VALUES (?, ?, ?, ?, ?)");
+							$STHIN = $DBH->prepare("INSERT INTO patient (surname, years, basic_diagnosis, concomitant_diagnosis, privileges, passwd) VALUES (?, ?, ?, ?, ?, ?)");
 							$STHIN->bindParam(1, $surname);
 							$STHIN->bindParam(2, $years); 
 							$STHIN->bindParam(3, $basic_diagnosis); 
 							$STHIN->bindParam(4, $concomitant_diagnosis);
 							$STHIN->bindParam(5, $privileges);
+							$STHIN->bindParam(6, $passwd);
 							$STHIN->execute();
 							$DBH = null;
 							header("Location: http://bd.lab");							

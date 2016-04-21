@@ -21,20 +21,10 @@
 		Состав: <?=$composition;?>
 	</p>
 
-	<form name="upd" action="upd.php" method="post">
-		<input type="hidden" name="id" value="<?=$id?>">
-		<input type="hidden" name="name" value="<?=$name?>">
-		<input type="hidden" name="alias_1" value="<?=$alias_1?>">
-		<input type="hidden" name="alias_2" value="<?=$alias_2?>">
-		<input type="hidden" name="alias_3" value="<?=$alias_3?>">
-		<input type="hidden" name="shelf_life" value="<?=$shelf_life?>">
-		<input type="hidden" name="composition" value="<?=$composition?>">
-		<input class="galaxybutton" name="upd" type="submit" value="Изменить">
-	</form>
+	<?
+		if (isset($_SESSION["role"]) && $_SESSION["role"] !=0) {
+			include "/forms_and_control/form_midl_drug.html";
+		}
+	?>
 	
-	<form name="del" action="del.php" method="post">
-		<input type="hidden" name="key" value="<?=$key?>">
-		<input type="hidden" name="id" value="<?=$id?>">
-		<input class="galaxybutton" name="del" type="submit" value="Удалить">
-	</form>
 </article>		

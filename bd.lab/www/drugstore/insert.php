@@ -28,22 +28,28 @@
 
 	require_once $_SERVER['DOCUMENT_ROOT']."/navigation_and_head/head.html";
 	require_once $_SERVER['DOCUMENT_ROOT']."/navigation_and_head/navigation.php";
-	require_once $_SERVER['DOCUMENT_ROOT']."/navigation_and_head/foot.html";
-	if (isset($_SESSION["name"]) && $_SESSION["name"] != "") 
+	
+	if (isset($_SESSION["role"]) && $_SESSION["role"] !=0) 
 	{
-		$name = $_SESSION["name"];
-		$number = $_SESSION["number"];
-		$type = $_SESSION["type"];
-		$address = $_SESSION["address"];
-		$erorn = $_SESSION["erorn"];
-		$_SESSION["name"] = "";
-		$_SESSION["number"] = "";
-		$_SESSION["type"] = "";
-		$_SESSION["address"] = "";
-		$_SESSION["erorn"] = "";
+		if (isset($_SESSION["name"]) && $_SESSION["name"] != "") 
+		{
+			$name = $_SESSION["name"];
+			$number = $_SESSION["number"];
+			$type = $_SESSION["type"];
+			$address = $_SESSION["address"];
+			$erorn = $_SESSION["erorn"];
+			$_SESSION["name"] = "";
+			$_SESSION["number"] = "";
+			$_SESSION["type"] = "";
+			$_SESSION["address"] = "";
+			$_SESSION["erorn"] = "";
+		}
+		$key = $_SESSION["key"];
+		type_dragstore ();
+		require_once "insert.html";
 	}
-	$key = $_SESSION["key"];
-	type_dragstore ();
-	require_once "insert.html";
+	else
+		include $_SERVER['DOCUMENT_ROOT']."/forms_and_control/erorr404.html";
+	require_once $_SERVER['DOCUMENT_ROOT']."/navigation_and_head/foot.html";
 	
 ?>

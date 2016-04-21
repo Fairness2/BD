@@ -11,9 +11,10 @@
 		$basic_diagnosis = clean ($_POST["newasic_diagnosis"]);
 		$concomitant_diagnosis = clean ($_POST["newconcomitant_diagnosis"]);
 		$privileges = clean ($_POST["newprivileges"]);
-		if(!empty($surname))
+		$passwd = clean ($_POST["passwd"]);
+		if(!empty($surname) && !empty($passwd))
 		{
-			if (check_length($surname, 1, 20) && check_length($years, 0, 3) && check_length($basic_diagnosis, 0, 50) && check_length($concomitant_diagnosis, 0, 50)) 
+			if (check_length($surname, 1, 20) && check_length($years, 0, 3) && check_length($basic_diagnosis, 0, 50) && check_length($concomitant_diagnosis, 0, 50)  && check_length($passwd, 6, 100)) 
 			{				
 				require_once $_SERVER['DOCUMENT_ROOT']."/navigation_and_head/conect.php";
 				if ($errorconect != 2) 
@@ -27,16 +28,17 @@
 						$row = $STHC->fetch();
 						if ($row["count"] == 0)
 						{
-							$STHS = $DBH->prepare("UPDATE patient SET surname = ?, years = ?, basic_diagnosis = ?, concomitant_diagnosis = ?, privileges = ? WHERE id = ?");
+							$STHS = $DBH->prepare("UPDATE patient SET surname = ?, years = ?, basic_diagnosis = ?, concomitant_diagnosis = ?, privileges = ?, passwd = ? WHERE id = ?");
 							$STHS->bindParam(1, $surname);
 							$STHS->bindParam(2, $years); 
 							$STHS->bindParam(3, $basic_diagnosis); 
 							$STHS->bindParam(4, $concomitant_diagnosis);
 							$STHS->bindParam(5, $privileges);
-							$STHS->bindParam(6, $id);
+							$STHS->bindParam(6, $passwd);
+							$STHS->bindParam(7, $id);
 							$STHS->execute();
 							$DBH = null;
-							header("Location: http://bd.lab");							
+							header("Location: http://bd.lab/user/userunlog.php?url=http://bd.lab");							
 						}
 						else
 						{

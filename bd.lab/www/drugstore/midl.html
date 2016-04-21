@@ -14,20 +14,11 @@
 		Адрес: <?=$address;?>
 	</p>
 	
-
-	<form name="upd" action="upd.php" method="post">
-		<input type="hidden" name="id" value="<?=$id?>">
-		<input type="hidden" name="key" value="<?=$key?>">
-		<input type="hidden" name="name" value="<?=$name?>">
-		<input type="hidden" name="number" value="<?=$number?>">
-		<input type="hidden" name="type" value="<?=$type?>">
-		<input type="hidden" name="address" value="<?=$address?>">
-		<input class="galaxybutton" name="upd" type="submit" value="Изменить">
-	</form>
+	<?
+		if (isset($_SESSION["role"]) && $_SESSION["role"] !=0) 
+		{
+			include $_SERVER['DOCUMENT_ROOT']."/forms_and_control/form_midl_drugstore.html";
+		}
+	?>
 	
-	<form name="del" action="del.php" method="post">
-		<input type="hidden" name="key" value="<?=$key?>">
-		<input type="hidden" name="id" value="<?=$id?>">
-		<input class="galaxybutton" name="del" type="submit" value="Удалить">
-	</form>
 </article>		

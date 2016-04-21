@@ -1,5 +1,6 @@
 <?	
 	session_start();
+
 	function inser($id) 
 	{
 	    require_once $_SERVER['DOCUMENT_ROOT']."/forms_and_control/control_form.php";
@@ -40,15 +41,23 @@
 	require_once $_SERVER['DOCUMENT_ROOT']."/navigation_and_head/head.html";
 	require_once $_SERVER['DOCUMENT_ROOT']."/navigation_and_head/navigation.php";
 	
-	$key = $_SESSION["key"];
-	if ((isset($_POST["id"])) && ($key == $_POST["key"])) 
+
+	if (isset($_SESSION["role"]) && $_SESSION["role"] !=0) 
 	{
-		inser ($_POST["id"]);
+		$key = $_SESSION["key"];
+		if ((isset($_POST["id"])) && ($key == $_POST["key"])) 
+		{
+			inser ($_POST["id"]);
+		}
+		elseif ((isset($_SESSION["drugid"])) && ($_SESSION["drugid"] != "")) 
+		{
+			inser ($_SESSION["drugid"]);
+		}
+		else
+			require_once $_SERVER['DOCUMENT_ROOT']."/error.html";	
 	}
 	else
-	{
-		inser ($_SESSION["drugid"]);
-	}
+		include $_SERVER['DOCUMENT_ROOT']."/forms_and_control/erorr404.html";
 	require_once $_SERVER['DOCUMENT_ROOT']."/navigation_and_head/foot.html";
 		
 ?>
