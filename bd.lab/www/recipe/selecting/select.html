@@ -1,0 +1,17 @@
+<table>
+        <tr>
+            <td class="table_header">Фамилия</td>
+            <td class="table_header">Препарат</td>
+            <td class="table_header">Дата выписки</td>
+        </tr>
+        <?
+            while ($arr = $STHCou->fetch()) 
+                {
+                    $date = $arr["date"];
+                    $surname = $arr["surname"];
+                    $name = $arr["name"];
+                    include "in_select.html";
+                    $er = 1;
+                }
+        ?>
+    </table>

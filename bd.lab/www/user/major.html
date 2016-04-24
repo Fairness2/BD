@@ -1,18 +1,27 @@
 ﻿<article class="midl">
 	<h2>Вот кто покупает дорогие препараты</h2>
-	<?
-		while ($row = $STHCo->fetch()) 
-		{
-			$surname = $row["surname"];
-			if ($row["privileges"] == 0) 
-				$privileges = "Льгот нет";
-			else
-				$privileges = "Льготы есть";
-			$name = $row["name"];
-			$pu_price = $row["pu_price"];
-			$dr_prise = $row["dr_prise"];
-			$error = 2;
-			echo "<p>Фамилия: $surname. $privileges. Препарат: $name. Цена покупки: $pu_price. Цена в аптеке: $dr_prise.</p>";
-		}
-	?>
+	<table>
+        <tr>
+            <td class="table_header"> Фамилия</td>
+            <td class="table_header"> Льготы</td>
+            <td class="table_header"> Препарат</td>
+            <td class="table_header"> Цена покупки</td>
+            <td class="table_header"> Цена в аптеке</td>
+        </tr>    
+		<?
+			while ($row = $STHCo->fetch()) 
+			{
+				$surname = $row["surname"];
+				if ($row["privileges"] == 0) 
+					$privileges = "Льгот нет";
+				else
+					$privileges = "Льготы есть";
+				$name = $row["name"];
+				$pu_price = $row["pu_price"];
+				$dr_prise = $row["dr_prise"];
+				$error = 2;
+				include "in_major.html";
+			}
+		?>
+	</table>
 </article>		

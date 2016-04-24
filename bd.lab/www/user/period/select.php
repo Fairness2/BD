@@ -26,7 +26,7 @@
 				if ($arr = $STHCou->fetch()) 
 				{
 					$count = $arr["count"];					
-					echo "<p>Фамилия покупателя: $surname. Кол-во: $count. Дата с $s_date по $f_date</p>";
+					include "select.html";
 				}
 				else {
 					echo "<p>Сдесь ничего нет</p>";

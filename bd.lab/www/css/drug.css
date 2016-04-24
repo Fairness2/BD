@@ -225,3 +225,29 @@ article img {
 	padding: 1em;
 	margin: auto;
 }
+
+table {
+	border: 0.1em solid #071888;
+	background-color: #AAE9AB;	
+	border-radius: 1em;
+	padding: 1em;
+	margin: auto;
+}
+
+.table_header, .table_body {
+	text-align: center;
+	font-family: century gothic, sans-serif;
+	font-size: 1em;
+	text-align: justify;
+	padding: 0.5em;
+}
+
+.table_header {
+	background-color: #B8BBDB;
+	text-align: center;
+}
+
+.table_body {
+	background-color: #F3F2F2;
+	text-align: center;
+}

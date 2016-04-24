@@ -40,14 +40,7 @@
 				//$arrcount = $STHCou->fetch();
 				//var_dump ($arrcount);
 				$ed = 0;
-				while ($arr = $STHCou->fetch()) 
-				{
-					$date = $arr["date"];
-					$surname = $arr["surname"];
-					$name = $arr["name"];
-					echo "<p>Фамилия покупателя: $surname. Препарат: $name. Дата выписки: $date</p>";
-					$er = 1;
-				}
+				include "select.html";
 				if ($er == 0) {
 					echo "<p>Сдесь ничего нет</p>";
 				}
